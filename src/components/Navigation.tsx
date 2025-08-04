@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,7 +29,7 @@ const Navigation = () => {
           <div className="text-xl font-bold">
             Dhwani Jha
           </div>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             <Button 
               variant="ghost" 
               onClick={() => scrollToSection("about")}
@@ -50,6 +51,7 @@ const Navigation = () => {
             >
               Contact
             </Button>
+            <ThemeToggle />
           </div>
         </div>
       </div>
