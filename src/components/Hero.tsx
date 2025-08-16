@@ -10,17 +10,11 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      <div className="absolute top-0 left-0 text-9xl font-black text-accent/5 z-0">
+      <div className="absolute top-0 left-0 text-9xl font-black text-accent/15 z-0">
         2025
       </div>
       <div className="container mx-auto px-6 text-center z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="flex justify-center items-center gap-8 mb-6 text-sm font-medium text-muted-foreground">
-            <span>design</span>
-            <span>innovation</span>
-            <span>manufacturing</span>
-          </div>
-          
           <h1 className="hero-text mb-6">
             Industrial Designer
           </h1>
@@ -39,25 +33,28 @@ const Hero = () => {
               onClick={scrollToProjects}
               className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
             >
-              View My Work
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="px-8 py-6 text-lg"
-            >
-              Download CV
+              View My Projects
             </Button>
           </div>
         </div>
       </div>
-      
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground">
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-sm">New Zealand</span>
-          <div className="w-px h-8 bg-accent"></div>
-        </div>
+    <div 
+      className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-muted-foreground"
+    >
+      <div className="flex flex-col items-center gap-2">
+        {/* Down arrow */}
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        fill="none" 
+        viewBox="0 0 24 24" 
+        strokeWidth={1.5} 
+        stroke="currentColor" 
+        className="w-10 h-10 animate-slow-bounce"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+      </svg>
       </div>
+    </div>
     </section>
   );
 };

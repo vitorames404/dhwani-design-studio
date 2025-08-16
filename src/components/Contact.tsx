@@ -1,6 +1,8 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MapPin, FileDown } from "lucide-react";
+import { Mail, Linkedin } from "lucide-react";
+
+const EMAIL = "maildhwanijha@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/dhwani-jha/"; // <- replace with your profile
 
 const Contact = () => {
   return (
@@ -11,47 +13,39 @@ const Contact = () => {
           <p className="text-xl text-muted-foreground mb-16">
             I'm always interested in discussing new opportunities and innovative projects
           </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <Card className="border-0 shadow-lg hover-lift">
-              <CardContent className="p-8 text-center">
-                <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Email</h3>
-                <p className="text-muted-foreground">maildhwanijha@gmail.com</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-lg hover-lift">
-              <CardContent className="p-8 text-center">
-                <MapPin className="w-8 h-8 text-accent mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Location</h3>
-                <p className="text-muted-foreground">New Zealand</p>
-              </CardContent>
-            </Card>
-            
-            <Card className="border-0 shadow-lg hover-lift">
-              <CardContent className="p-8 text-center">
-                <FileDown className="w-8 h-8 text-accent mx-auto mb-4" />
-                <h3 className="text-lg font-semibold mb-2">Portfolio</h3>
-                <p className="text-muted-foreground">Download PDF</p>
-              </CardContent>
-            </Card>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-6 text-lg"
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Email */}
+            <a
+              href={`mailto:${EMAIL}`}
+              aria-label="Send me an email"
+              className="block"
             >
-              Get In Touch
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="px-8 py-6 text-lg"
+              <Card className="border-0 shadow-lg hover-lift h-full">
+                <CardContent className="p-8 text-center">
+                  <Mail className="w-8 h-8 text-accent mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Email</h3>
+                  <p className="text-muted-foreground">{EMAIL}</p>
+                </CardContent>
+              </Card>
+            </a>
+
+            {/* LinkedIn */}
+            <a
+              href={LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Visit my LinkedIn"
+              className="block"
             >
-              View LinkedIn
-            </Button>
+              <Card className="border-0 shadow-lg hover-lift h-full">
+                <CardContent className="p-8 text-center">
+                  <Linkedin className="w-8 h-8 text-accent mx-auto mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">LinkedIn</h3>
+                  <p className="text-muted-foreground">Open profile</p>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </div>

@@ -2,13 +2,41 @@ import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Calendar, Tag } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Dialog, DialogContent } from "@/components/ui/dialog"; // <-- add this
+import { useEffect, useMemo, useState } from "react";
 
 const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
+
   const project = projects.find(p => p.id === id);
+
+  // -------- Lightbox state ----------
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Build a flat images array: prefer detailImages, fall back to hero image
+  const images = useMemo(() => {
+    if (!project) return [];
+    if (project.detailImages && project.detailImages.length > 0) return project.detailImages;
+    return project.image ? [project.image] : [];
+  }, [project]);
+
+  const next = () => setActiveIndex((prev) => (prev + 1) % images.length);
+  const prev = () => setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+
+  // Keyboard navigation
+  useEffect(() => {
+    if (!lightboxOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") next();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "Escape") setLightboxOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [lightboxOpen, images.length]);
 
   if (!project) {
     return (
@@ -40,7 +68,7 @@ const ProjectDetail = () => {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="project-number mb-6">{project.number}</div>
+              <div className="project-number mb-6 text-accent/70">{project.number}</div>
               <h1 className="text-5xl md:text-6xl font-black mb-4">{project.title}</h1>
               <h2 className="text-2xl text-accent font-semibold mb-6">{project.subtitle}</h2>
               
@@ -82,20 +110,31 @@ const ProjectDetail = () => {
             </section>
 
             {/* Image Gallery */}
-            {project.detailImages && project.detailImages.length > 1 && (
+            {images.length > 0 && (
               <section className="mb-16">
                 <h3 className="text-3xl font-bold mb-8">Project Gallery</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {project.detailImages.map((image, index) => (
-                    <Card key={index} className="overflow-hidden border-0 shadow-lg hover-lift">
-                      <CardContent className="p-0">
-                        <img 
-                          src={image} 
-                          alt={`${project.title} detail ${index + 1}`}
-                          className="w-full h-auto object-cover"
-                        />
-                      </CardContent>
-                    </Card>
+                  {images.map((image, index) => (
+                    <button
+                      key={index}
+                      type="button"
+                      onClick={() => {
+                        setActiveIndex(index);
+                        setLightboxOpen(true);
+                      }}
+                      className="text-left group focus:outline-none"
+                      aria-label={`Open image ${index + 1} of ${images.length}`}
+                    >
+                      <Card className="overflow-hidden border-0 shadow-lg hover-lift">
+                        <CardContent className="p-0">
+                          <img
+                            src={image}
+                            alt={`${project.title} detail ${index + 1}`}
+                            className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                          />
+                        </CardContent>
+                      </Card>
+                    </button>
                   ))}
                 </div>
               </section>
@@ -166,6 +205,53 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* -------- Lightbox Dialog -------- */}
+      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+        <DialogContent className="max-w-[95vw] sm:max-w-[90vw] p-0 bg-background/95">
+          {/* Top bar with close */}
+          <div className="flex items-center justify-between px-4 py-3">
+            <span className="text-sm text-muted-foreground">
+              {images.length > 0 ? `${activeIndex + 1} / ${images.length}` : ""}
+            </span>
+          </div>
+
+          {/* Image area */}
+          <div className="relative w-full h-full sm:h-[80vh] bg-black/80 flex items-center justify-center">
+            {/* Prev */}
+            {images.length > 1 && (
+              <button
+                onClick={prev}
+                className="absolute left-2 sm:left-4 p-2 rounded-full bg-white/80 hover:bg-white shadow focus:outline-none"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+            )}
+
+            {/* Image (click to go next) */}
+            {images[activeIndex] && (
+              <img
+                src={images[activeIndex]}
+                alt={`Image ${activeIndex + 1}`}
+                onClick={() => images.length > 1 && next()}
+                className="max-h-full max-w-full object-contain cursor-zoom-in"
+              />
+            )}
+
+            {/* Next */}
+            {images.length > 1 && (
+              <button
+                onClick={next}
+                className="absolute right-2 sm:right-4 p-2 rounded-full bg-white/80 hover:bg-white shadow focus:outline-none"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+            )}
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

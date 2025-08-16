@@ -30,7 +30,7 @@ export const projects: Project[] = [
       "/lovable-uploads/7ebe5ecf-acb1-40d0-aead-e929b6a61e34.png"
     ],
     type: "Industrial Design Internship",
-    duration: "MAR-MAY 2025",
+    duration: "MAR - MAY 2025",
     keyFeatures: [
       "Dual-gear mechanism for smooth operation",
       "Gallagher's iconic orange branding integration", 
@@ -63,7 +63,7 @@ export const projects: Project[] = [
       "/lovable-uploads/43285d92-79f3-435d-b411-a58fdf5b2786.png"
     ],
     type: "Industrial Design Project",
-    duration: "MAY-JUN 2025",
+    duration: "MAY - JUN 2025",
     keyFeatures: [
       "Fan-like blade design for task visualization",
       "Tactile progress tracking",
@@ -96,7 +96,7 @@ export const projects: Project[] = [
       "/lovable-uploads/528787d3-3912-40d8-ac7b-f20233260b38.png"
     ],
     type: "Industrial Design Challenge",
-    duration: "AUG-OCT 2024",
+    duration: "AUG - OCT 2024",
     keyFeatures: [
       "Dual-gear mechanism for precise application",
       "Uses felted NZ strong wool",
