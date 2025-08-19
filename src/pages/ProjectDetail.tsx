@@ -113,25 +113,24 @@ const ProjectDetail = () => {
             {images.length > 0 && (
               <section className="mb-16">
                 <h3 className="text-3xl font-bold mb-8">Project Gallery</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
                   {images.map((image, index) => (
                     <button
                       key={index}
                       type="button"
-                      onClick={() => {
-                        setActiveIndex(index);
-                        setLightboxOpen(true);
-                      }}
-                      className="text-left group focus:outline-none"
+                      onClick={() => { setActiveIndex(index); setLightboxOpen(true); }}
+                      className="text-left group focus:outline-none w-full max-w-[300px]"
                       aria-label={`Open image ${index + 1} of ${images.length}`}
                     >
                       <Card className="overflow-hidden border-0 shadow-lg hover-lift">
                         <CardContent className="p-0">
-                          <img
-                            src={image}
-                            alt={`${project.title} detail ${index + 1}`}
-                            className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                          />
+                          <div className="relative w-full aspect-[4/3]">
+                            <img
+                              src={image}
+                              alt={`${project.title} detail ${index + 1}`}
+                              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                            />
+                          </div>
                         </CardContent>
                       </Card>
                     </button>

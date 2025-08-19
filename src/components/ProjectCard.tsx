@@ -59,11 +59,14 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
       <div className={`${index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""}`}>
         <Card className="hover-lift overflow-hidden border-0 shadow-lg group-hover:shadow-2xl transition-all duration-300">
           <CardContent className="p-0">
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-300"
-            />
+            <div className="relative w-full aspect-[4/3] max-h-[450px]">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
           </CardContent>
         </Card>
       </div>
