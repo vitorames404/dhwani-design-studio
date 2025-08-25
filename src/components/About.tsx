@@ -27,7 +27,6 @@ const About = () => {
                 alt="Dhwani Jha"
                 className="rounded-lg shadow-2xl overflow-hidden w-auto h-auto max-w-full max-h-[400px] object-contain"
               />
-            <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent rounded-full opacity-20"></div>
           </div>
         </div>
       </div>
