@@ -7,12 +7,16 @@ export interface Project {
   fullDescription: string;
   image: string;
   detailImages: string[];
-  type: string;
+  type: string | string[];
   duration: string;
   keyFeatures: string[];
   challenges: string[];
   outcomes: string[];
   skills: string[];
+  awardLabel?: string;
+
+  confidential?: boolean;
+  watermarkText?: string;
 }
 
 export const projects: Project[] = [
@@ -57,7 +61,9 @@ export const projects: Project[] = [
       "Created a refined, market-ready product",
       "Demonstrated dynamic relationship between design evolution and brand identity"
     ],
-    skills: ["SolidWorks", "KeyShot", "Industrial Design", "Brand Integration", "CAD Modeling"]
+    skills: ["SolidWorks", "KeyShot", "Industrial Design", "Brand Integration", "CAD Modeling"],
+    confidential: true,
+    watermarkText: "© Gallagher Animal Management",
   },
   {
     id: "bloomlist",
@@ -94,7 +100,7 @@ export const projects: Project[] = [
       "Successfully blended traditional tangible interactions with modern digital connectivity",
       "Addressed digital fatigue through intentional design"
     ],
-    skills: ["SolidWorks", "User Experience Design", "Prototyping", "Industrial Design", "Interaction Design"]
+    skills: ["SolidWorks", "User Experience Design", "Prototyping", "Industrial Design", "Interaction Design"],
   },
   {
     id: "griplicator",
@@ -113,7 +119,7 @@ export const projects: Project[] = [
       "/lovable-uploads/griplicator6.jpg",
       "/lovable-uploads/griplicator7.jpg",
     ],
-    type: "Industrial Design Challenge",
+    type: ["Industrial Design Challenge", "Award Winning Project"], 
     duration: "AUG - OCT 2024",
     keyFeatures: [
       "Dual-gear mechanism for precise application",
@@ -133,7 +139,8 @@ export const projects: Project[] = [
       "Created eco-friendly alternative to synthetic grips",
       "Demonstrated market potential and unique innovation"
     ],
-    skills: ["Sustainable Design", "Mechanical Engineering", "CAD Modeling", "Material Innovation"]
+    skills: ["Sustainable Design", "Mechanical Engineering", "CAD Modeling", "Material Innovation"],
+    awardLabel: "Award Winning"
   },
   {
     id: "stryke-accessories",
@@ -221,7 +228,7 @@ export const projects: Project[] = [
       "/lovable-uploads/table3.png",
       "/lovable-uploads/table2.png",
     ],
-    type: "LEAP KeyShot Challenge 2025",
+    type: ["LEAP KeyShot Challenge 2025", "Award Winning Project"],
     duration: "JUN 2025",
     keyFeatures: [
       "Photorealistic lighting setup",
@@ -241,6 +248,7 @@ export const projects: Project[] = [
       "Recognition for technical visualization skills",
       "Demonstrated mastery of advanced rendering techniques"
     ],
-    skills: ["KeyShot", "3D Rendering", "Lighting Design", "Material Science", "Visual Communication"]
+    skills: ["KeyShot", "3D Rendering", "Lighting Design", "Material Science", "Visual Communication"],
+    awardLabel: "Award Winning Project"
   }
 ];

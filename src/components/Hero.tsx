@@ -15,14 +15,15 @@ const Hero = () => {
       </div>
       <div className="container mx-auto px-6 text-center z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="hero-text mb-6">
-            Industrial Designer
-          </h1>
           
-          <h2 className="hero-text text-accent mb-8">
+          <h2 className="hero-text mb-8">
             Dhwani Jha
           </h2>
-          
+
+          <h1 className="hero-text text-accent mb-6">
+            Industrial Designer
+          </h1>
+
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
             Crafting innovative products that seamlessly integrate technology with human-centered solutions
           </p>

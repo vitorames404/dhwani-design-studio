@@ -1,6 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Project } from "@/data/projects";
 import { useNavigate } from "react-router-dom";
+import { Tag, Trophy } from "lucide-react";
+
 
 interface ProjectCardProps {
   project: Project;
@@ -46,10 +48,24 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
           {project.description}
         </p>
 
-        {/* keep only the type chip here to avoid repeating the date */}
-        <div className="flex flex-col sm:flex-row gap-4 text-sm mb-6">
-          <span className="px-3 py-1 bg-muted rounded-full">{project.type}</span>
+        {/* categories (one or many) */}
+        <div className="flex flex-wrap gap-2 text-sm mb-6">
+          {(Array.isArray(project.type) ? project.type : [project.type]).map((cat, i) => (
+            <span
+              key={i}
+              className="inline-flex items-center gap-1.5 px-3 py-1 bg-muted rounded-full"
+            >
+              {/* optional icons per category */}
+              {cat === "Award Winning Project" ? (
+                <Trophy className="w-3.5 h-3.5 text-accent" />
+              ) : (
+                <Tag className="w-3.5 h-3.5 text-accent" />
+              )}
+              {cat}
+            </span>
+          ))}
         </div>
+
 
         <div className="text-accent font-medium group-hover:translate-x-2 transition-transform duration-300">
           View Project Details →

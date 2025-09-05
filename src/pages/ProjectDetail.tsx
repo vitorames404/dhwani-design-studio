@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Calendar, Tag, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, X, ChevronLeft, ChevronRight, Trophy } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog"; // <-- add this
 import { useEffect, useMemo, useState } from "react";
 
@@ -28,6 +28,9 @@ const ProjectDetail = () => {
 
   // Keyboard navigation
   useEffect(() => {
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+
     if (!lightboxOpen) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") next();
@@ -81,6 +84,12 @@ const ProjectDetail = () => {
                   <Calendar className="w-4 h-4 text-accent" />
                   <span className="text-sm font-medium">{project.duration}</span>
                 </div>
+                {project.awardLabel && (
+                  <div className="flex items-center gap-2 px-4 py-2 bg-background rounded-full">
+                    <Trophy className="w-4 h-4 text-accent" />
+                    <span className="text-sm font-medium">{project.awardLabel}</span>
+                  </div>
+                )}
               </div>
             </div>
             
@@ -98,9 +107,10 @@ const ProjectDetail = () => {
       </div>
 
       {/* Content */}
-      <div className="py-24">
+      <div className="pt-12 pb-24">   {/* less space above, keep padding below */}
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
+            
             {/* Project Description */}
             <section className="mb-16">
               <h3 className="text-3xl font-bold mb-6">Project Overview</h3>
@@ -108,6 +118,21 @@ const ProjectDetail = () => {
                 {project.fullDescription}
               </p>
             </section>
+ 
+            <section className="mb-16 mt-0">   {/* remove big margin top */}
+              <h3 className="text-2xl font-bold mb-6">Skills & Technologies</h3>
+              <div className="flex flex-wrap gap-3">
+                {project.skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </section>
+
 
             {/* Image Gallery */}
             {images.length > 0 && (
@@ -141,8 +166,8 @@ const ProjectDetail = () => {
 
             {/* Key Features */}
             <section className="mb-16">
-              <h3 className="text-3xl font-bold mb-8">Key Features</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <h3 className="text-2xl font-bold mb-8">Key Features</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.keyFeatures.map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
@@ -159,7 +184,7 @@ const ProjectDetail = () => {
                 <div className="space-y-4">
                   {project.challenges.map((challenge, index) => (
                     <div key={index} className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-destructive rounded-full mt-3 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-accent rounded-full mt-3 flex-shrink-0"></div>
                       <p className="text-muted-foreground">{challenge}</p>
                     </div>
                   ))}
@@ -178,18 +203,6 @@ const ProjectDetail = () => {
                 </div>
               </section>
             </div>
-
-            {/* Skills */}
-            <section className="mb-16">
-              <h3 className="text-2xl font-bold mb-6">Skills & Technologies</h3>
-              <div className="flex flex-wrap gap-3">
-                {project.skills.map((skill, index) => (
-                  <span key={index} className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-medium">
-                    {skill}
-                  </span>
-                ))}
-              </div>
-            </section>
 
             {/* Navigation */}
             <div className="flex justify-center">
