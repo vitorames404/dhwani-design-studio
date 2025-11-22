@@ -2,6 +2,8 @@ import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/projects";
 
 const Projects = () => {
+  const featuredProjects = projects.filter(p => !p.isRecent);
+
   return (
     <section id="projects" className="py-24">
       <div className="container mx-auto px-6">
@@ -13,7 +15,7 @@ const Projects = () => {
         </div>
         
         <div className="space-y-32">
-          {projects.map((project, index) => (
+          {featuredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>

@@ -14,7 +14,7 @@ export interface Project {
   outcomes: string[];
   skills: string[];
   awardLabel?: string;
-
+  isRecent?: boolean;
   confidential?: boolean;
   watermarkText?: string;
 }
@@ -250,5 +250,122 @@ export const projects: Project[] = [
     ],
     skills: ["KeyShot", "3D Rendering", "Lighting Design", "Material Science", "Visual Communication"],
     awardLabel: "Award Winning Project"
-  }
+  },
+  {
+    id: "boxie",
+    number: "01",
+    isRecent: true,
+    title: "Boxie: Bottle to Box & Back to Nature",
+    subtitle: "Capstone Exhibition @ University of Waikato",
+    description:
+      "A compostable PHA packaging system engineered to transform from a shampoo bottle into a reusable storage box. The project explores low-effort sustainability through playful, re-purposeable design, aimed at encouraging users to re-use FMCG packaging.",
+    fullDescription:
+      "Boxie, with an experimental vision towards the future of compostable packaging, challenges the conventions of single-use FMCG packaging by introducing a dual-purpose container made from fully compostable PHA bioplastic. Designed to begin life as a shampoo bottle and effortlessly convert into a compact storage box, Boxie makes re-use intuitive and enjoyable rather than burdensome. Featuring interchangeable inserts, precise push-fit geometry, and playful character-driven branding, the project blends sustainability, engineering, and emotional design into one cohesive system. During the public capstone showcase, Boxie sparked lively conversations among industry guests, designers, students, parents, and young visitors, who quickly understood the transformation through hands-on demonstrations and visual storytelling.\n\nBoxie began as a question: Why does reusing packaging feel so difficult? Through research, rapid prototyping, and mechanism exploration, the solution became a two-insert system: one threaded insert for bottle mode, and one flat insert for box mode. Users simply swap the inserts with no tools, glue or extra purchases required. The body splits neatly to function as a snug-fit storage box, engineered with tight tolerances, calculated clearances, and correct draft angles. The choice of PHA bioplastic supports a product lifecycle that ends in nature, decomposing in home compost without hassle. To strengthen emotional longevity, each Boxie variant, Tropical Bliss, Aqua Fresh, Cherry Crush features a unique colour, embossed motif, and expressive face, transforming packaging into a cheerful companion rather than waste.",
+    image: "/lovable-uploads/boxie9.png",
+    detailImages: [
+      "/lovable-uploads/boxie1.jpg",
+      "/lovable-uploads/boxie2.jpg",
+      "/lovable-uploads/boxie3.jpg",
+      "/lovable-uploads/boxie4.jpg",
+      "/lovable-uploads/boxie5.jpg",
+      "/lovable-uploads/boxie6.jpg",
+      "/lovable-uploads/boxie7.jpg",
+      "/lovable-uploads/boxie8.jpg",
+      "/lovable-uploads/boxie10.png",
+      "/lovable-uploads/boxie11.png",
+      "/lovable-uploads/boxie12.png",
+      "/lovable-uploads/boxie13.png",
+      "/lovable-uploads/boxie15.png",
+      "/lovable-uploads/boxie16.png",
+      "/lovable-uploads/boxie17.png",
+    ],
+    type: ["Exhibited project", "Circular Packaging Design"],
+    duration: "JUL - OCT 2025",
+    keyFeatures: [
+      "Dual-Purpose Packaging System: Transforms from bottle to box through interchangeable inserts placed inside the product at purchase. No external parts needed. Supported by user-tested tolerances and precise press-fit geometry.",
+      "100% PHA Bioplastic: Compostable in home environments; no sorting required. Designed to return safely to nature within 6–12 months.",
+      "Character-Driven Branding: Playful personalities (Tropical Bliss, Aqua Fresh, Cherry Crush) make sustainability friendly and relatable. Embossed motifs match fragrance themes—flowers, tuxedo, heart designs—which visitors described as 'cute', 'attractive' and 'desirable to keep'.",
+      "Intuitive User Transformation: A satisfying 'click' when inserting components, designed for all ages. Tested even with young children who quickly understood the bottle-to-box change.",
+      "Showcase-Ready Display Deliverables: A1 panel, looping promo video, labelled inserts, pamphlets, sticker packs and business cards created an engaging, professional capstone presentation that attracted industry attention."
+    ],
+    challenges: [
+      "Engineering the Insert Mechanism: Dozens of prototypes were required to refine tolerances, ensure airtight bottle mode, and enable a smooth box conversion. Failures in thread dimensions, wall thickness, draft angles and meshing provided crucial learning milestones.",
+      "Thread Development Difficulties: Standard SolidWorks threads were unreliable; multiple methods failed until real ISBT-spec caps were sourced and reverse-engineered.",
+      "Material-Driven Constraints: PHA requires careful consideration of shrinkage, heat distortion and mould design parameters.",
+      "Branding & Character Cohesion: Balancing form, emotional appeal, and clarity of function required iterative refinement of cap design, motifs and colour selections.",
+      "Exhibition Engagement: The capstone event required a display that communicated the concept even when the designer wasn't present."
+    ],
+    outcomes: [
+      "A reliable, manufacturable mechanism validated through physical testing.",
+      "Accurate thread geometry that works in real-world use.",
+      "Insights from staff and engineering faculty confirmed that Boxie is feasible for injection moulding at scale."
+    ],
+
+    skills: [
+      "CAD Modelling",
+      "Mechanism Development",
+      "Hands-on Prototyping",
+      "Material Research",
+      "Branding & Visual Design"
+    ]
+  },
+  {
+    id: "essentia",
+    number: "02",
+    isRecent: true,
+    title: "Essentia",
+    subtitle: "Product-service system project for tourists",
+    description:
+      "A user-oriented Product Service System with a solar-powered smart dispensing kiosk that gives travellers fast, affordable access to small-quantity essentials like sunscreen, electrolytes, lip balm and hygiene products across high-tourism hotspots in New Zealand.",
+    fullDescription:
+      "Essentia is a compact, booth-like self-service kiosk inspired by modern ticketing terminals, vending machines and public sunscreen dispensers. Operating on a use-oriented service model, it grants temporary access to essential items without requiring travellers to purchase expensive full-size retail products. The tall, durable housing includes a sun-shielding canopy with integrated solar panels, CCTV domes for safety, a large multilingual touchscreen, payment options and dispensing bays sized specifically for single-use products. The system is designed for beaches, parks, transport hubs and scenic lookouts, where long days outdoors often clash with limited access to basic comfort and safety items.\n\nBy combining robust hardware, intuitive touchscreen interaction, cashless pay-per-use access and modular refill cartridges, Essentia creates a seamless 24/7 public amenity for city councils, tourism boards and private operators. Its material selection, solar-powered cooling and low-waste refill loop support a sustainable Product Service System that shares responsibility for stocking, maintenance, pricing and accessibility between stakeholders.",
+    image: "/lovable-uploads/essentia1.jpg",
+    detailImages: [
+      "/lovable-uploads/essentia2.jpg",
+      "/lovable-uploads/essentia3.jpg",
+      "/lovable-uploads/essentia4.jpg",
+      "/lovable-uploads/essentia5.png",
+      "/lovable-uploads/essentia6.png",
+      "/lovable-uploads/essentia7.png",
+      "/lovable-uploads/essentia8.png",
+      "/lovable-uploads/essentia9.png",
+      "/lovable-uploads/essentia10.png",
+      "/lovable-uploads/essentia11.png",
+      "/lovable-uploads/essentia12.png",
+    ],
+    type: [
+      "Product-Service System Design",
+      "Interaction Design",
+      "Public Infrastructure Design"
+    ],
+    duration: "OCT 2025",
+    keyFeatures: [
+      "Solar-Powered Public Unit: A tilted solar canopy powers lighting, sensors, electronics and CCTV, reducing running costs while enabling remote placement in beaches, parks, transport hubs and scenic lookouts.",
+      "Multilingual Touchscreen Interface: Clear iconography and large navigation tiles support users unfamiliar with English or local New Zealand environments.",
+      "Pay-Per-Use Access to Essentials: Users pay only for what they need, such as sunscreen doses, electrolyte sachets, wipes and other single-use items, reducing cost, waste and the need to carry full-size products.",
+      "24/7 Availability and CCTV Safety Layer: CCTV cameras installed beneath the solar panel provide passive security and reassurance, critical for public installations in high-traffic areas.",
+      "Modular Service and Refilling System: Replenishment cartridges slide out for fast swap-and-replace maintenance, reducing downtime and labour while aligning with sustainability and PSS goals.",
+      "Weather-Resistant, Urban-Friendly Form: The unit references familiar ticket booths and ATMs, with clean corners, protective housing and elevated dispensing slots that enhance durability, hygiene and user trust."
+    ],
+    challenges: [
+      "Understanding Tourist Pain Points: Interviews and quick card-sorting exercises revealed recurring issues like forgotten essentials, expensive local alternatives, UV exposure, dehydration and low accessibility in unfamiliar locations.",
+      "Designing a Clear and Universal Interface: The UI needed to work for non-English speakers, families, older adults and visitors unfamiliar with local norms or location-specific instructions.",
+      "Public Safety and Hardware Resilience: High-traffic kiosks required anti-tamper forms, durable materials, structured ventilation and safe dispensing channels to withstand everyday use and occasional misuse.",
+      "Balancing Form, Technology and Service Logic: The system had to support both user convenience and stakeholder feasibility, including city councils, tourism operators and wellness brands."
+    ],
+    outcomes: [
+      "Validated demand for a pay-per-use essentials system in tourist-heavy areas.",
+      "A simplified, icon-driven ATM-inspired layout with clear voice and visual confirmation for transactions.",
+      "An integrated safety package including CCTV, a rigid frame, recessed screen, protected payment zone and minimal exposed surfaces.",
+      "A viable use-oriented PSS model built on shared responsibilities for stocking, maintenance, pricing and user accessibility."
+    ],
+    skills: [
+      "CAD Modelling & Assembly",
+      "Design for Public Environments",
+      "Interaction & UI Considerations",
+      "PSS Development",
+      "Sustainable Systems Thinking",
+      "Human-Centered Design Methods"
+    ]
+  },
 ];
