@@ -319,7 +319,7 @@ export const projects: Project[] = [
       "A user-oriented Product Service System with a solar-powered smart dispensing kiosk that gives travellers fast, affordable access to small-quantity essentials like sunscreen, electrolytes, lip balm and hygiene products across high-tourism hotspots in New Zealand.",
     fullDescription:
       "Essentia is a compact, booth-like self-service kiosk inspired by modern ticketing terminals, vending machines and public sunscreen dispensers. Operating on a use-oriented service model, it grants temporary access to essential items without requiring travellers to purchase expensive full-size retail products. The tall, durable housing includes a sun-shielding canopy with integrated solar panels, CCTV domes for safety, a large multilingual touchscreen, payment options and dispensing bays sized specifically for single-use products. The system is designed for beaches, parks, transport hubs and scenic lookouts, where long days outdoors often clash with limited access to basic comfort and safety items.\n\nBy combining robust hardware, intuitive touchscreen interaction, cashless pay-per-use access and modular refill cartridges, Essentia creates a seamless 24/7 public amenity for city councils, tourism boards and private operators. Its material selection, solar-powered cooling and low-waste refill loop support a sustainable Product Service System that shares responsibility for stocking, maintenance, pricing and accessibility between stakeholders.",
-    image: "/lovable-uploads/essentia1.jpg",
+    image: "/lovable-uploads/essentia3.jpg",
     detailImages: [
       "/lovable-uploads/essentia2.jpg",
       "/lovable-uploads/essentia3.jpg",
