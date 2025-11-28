@@ -10,7 +10,6 @@ import clsx from "clsx";
 const ProjectDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
   const project = projects.find(p => p.id === id);
 
   // -------- Lightbox state ----------
@@ -49,13 +48,14 @@ const ProjectDetail = () => {
   // Keyboard navigation
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-
     if (!lightboxOpen) return;
+
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") next();
       if (e.key === "ArrowLeft") prev();
       if (e.key === "Escape") setLightboxOpen(false);
     };
+
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [lightboxOpen, images.length]);
@@ -71,7 +71,7 @@ const ProjectDetail = () => {
 
     // Disable context menu globally when viewing Gallagher project
     document.addEventListener('contextmenu', preventContextMenu);
-    
+
     // Disable F12, Ctrl+Shift+I, Ctrl+U, etc.
     const preventDevTools = (e: KeyboardEvent) => {
       // F12
@@ -118,27 +118,28 @@ const ProjectDetail = () => {
     onClick?: () => void;
     variant?: "fill" | "shrink";
   }) => {
-    const containerClass =
-      variant === "fill"
-        ? "relative w-full h-full"
-        : "relative inline-flex max-w-full max-h-full";
+    const containerClass = variant === "fill"
+      ? "relative w-full h-full"
+      : "relative inline-flex max-w-full max-h-full";
 
-    const imageProps = isGallagherProject ? {
-      onContextMenu: handleContextMenu,
-      onDragStart: handleDragStart,
-      draggable: false,
-      style: { 
-        userSelect: 'none' as const, 
-        pointerEvents: 'none' as const,
-        WebkitUserSelect: 'none' as const,
-        MozUserSelect: 'none' as const,
-        msUserSelect: 'none' as const,
-      }
-    } : {};
+    const imageProps = isGallagherProject
+      ? {
+          onContextMenu: handleContextMenu,
+          onDragStart: handleDragStart,
+          draggable: false,
+          style: {
+            userSelect: 'none' as const,
+            pointerEvents: 'none' as const,
+            WebkitUserSelect: 'none' as const,
+            MozUserSelect: 'none' as const,
+            msUserSelect: 'none' as const,
+          }
+        }
+      : {};
 
     return (
-      <div 
-        className={containerClass} 
+      <div
+        className={containerClass}
         onClick={onClick}
         onContextMenu={isGallagherProject ? handleContextMenu : undefined}
         style={isGallagherProject ? { userSelect: 'none' } : undefined}
@@ -171,9 +172,8 @@ const ProjectDetail = () => {
                 {project?.watermarkText || "Gallagher Animal Management"}
               </span>
             </div>
-            
             {/* Overlay invisível para bloquear interações */}
-            <div 
+            <div
               className="absolute inset-0 bg-transparent pointer-events-auto"
               onContextMenu={handleContextMenu}
               onDragStart={handleDragStart}
@@ -204,21 +204,21 @@ const ProjectDetail = () => {
       {/* Header */}
       <div className="bg-muted/30 py-12">
         <div className="container mx-auto px-6">
-          <Button 
-            onClick={() => navigate("/")} 
-            variant="ghost" 
+          <Button
+            onClick={() => navigate("/")}
+            variant="ghost"
             className="mb-8 hover:text-accent"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
           </Button>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <div className="project-number mb-6 text-accent/70">{project.number}</div>
               <h1 className="text-5xl md:text-6xl font-black mb-4">{project.title}</h1>
               <h2 className="text-2xl text-accent font-semibold mb-6">{project.subtitle}</h2>
-              
+
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center gap-2 px-4 py-2 bg-background rounded-full">
                   <Tag className="w-4 h-4 text-accent" />
@@ -236,19 +236,21 @@ const ProjectDetail = () => {
                 )}
               </div>
             </div>
-            
+
             <Card className="overflow-hidden border-0 shadow-xl">
               <CardContent className="p-0">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-auto object-cover"
-                  {...(isGallagherProject ? {
-                    onContextMenu: handleContextMenu,
-                    onDragStart: handleDragStart,
-                    draggable: false,
-                    style: { userSelect: 'none' }
-                  } : {})}
+                  {...(isGallagherProject
+                    ? {
+                        onContextMenu: handleContextMenu,
+                        onDragStart: handleDragStart,
+                        draggable: false,
+                        style: { userSelect: 'none' }
+                      }
+                    : {})}
                 />
               </CardContent>
             </Card>
@@ -260,7 +262,6 @@ const ProjectDetail = () => {
       <div className="pt-12 pb-24">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            
             {/* Project Description */}
             <section className="mb-16">
               <h3 className="text-3xl font-bold mb-6">Project Overview</h3>
@@ -268,7 +269,7 @@ const ProjectDetail = () => {
                 {project.fullDescription}
               </p>
             </section>
- 
+
             <section className="mb-16 mt-0">
               <h3 className="text-2xl font-bold mb-6">Skills & Technologies</h3>
               <div className="flex flex-wrap gap-3">
@@ -283,17 +284,20 @@ const ProjectDetail = () => {
               </div>
             </section>
 
-            {/* Image Gallery */}
+            {/* Image Gallery - UPDATED TO 5 COLUMNS */}
             {images.length > 0 && (
               <section className="mb-16">
                 <h3 className="text-3xl font-bold mb-8">Project Gallery</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 place-items-center">
                   {images.map((image, index) => (
                     <button
                       key={index}
                       type="button"
-                      onClick={() => { setActiveIndex(index); setLightboxOpen(true); }}
-                      className="text-left group focus:outline-none w-full max-w-[300px]"
+                      onClick={() => {
+                        setActiveIndex(index);
+                        setLightboxOpen(true);
+                      }}
+                      className="text-left group focus:outline-none w-full max-w-[240px]"
                       aria-label={`Open image ${index + 1} of ${images.length}`}
                       onContextMenu={isGallagherProject ? handleContextMenu : undefined}
                     >
@@ -357,8 +361,8 @@ const ProjectDetail = () => {
 
             {/* Navigation */}
             <div className="flex justify-center">
-              <Button 
-                onClick={() => navigate("/")} 
+              <Button
+                onClick={() => navigate("/")}
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4"
               >
