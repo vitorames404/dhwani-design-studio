@@ -20,8 +20,8 @@ const Hero = () => {
             Dhwani Jha
           </h2>
 
-          <h1 className="hero-text text-accent mb-6">
-            Industrial Designer
+          <h1 className="hero-text text-6xl text-accent mb-6">
+            Aspiring Industrial Designer
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">

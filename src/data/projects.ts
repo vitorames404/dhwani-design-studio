@@ -71,6 +71,7 @@ export const projects: Project[] = [
     fullDescription: "Bloomlist is a fan-inspired task tracker designed to enhance daily productivity through mindful tactile interactions. My role involved ideation, detailed CAD modeling in SolidWorks, and prototyping to refine user experience and ergonomics. By visually unfolding tasks on customizable blades, Bloomlist offers users a satisfying tactile and visual sense of progress, addressing the modern need for intentionality and digital detox.",
     image: "/lovable-uploads/BloomList-main.png",
     detailImages: [
+      "/lovable-uploads/bloomlist-board.png",
       "/lovable-uploads/BloomList1.png",
       "/lovable-uploads/BloomList2.png",
       "/lovable-uploads/BloomList3.png",
@@ -108,6 +109,7 @@ export const projects: Project[] = [
     fullDescription: "The Griplicator is a handheld applicator that uses adhesive-backed rolls of felted NZ strong wool to upgrade tool handles, patch worn surfaces, and create ergonomic, non-slip grips. Designed with a dual-gear mechanism for smooth, precise application, it offers an eco-friendly alternative to synthetic grips, combining durability, comfort, and sustainability.",
     image: "/lovable-uploads/glipicator-main.jpg",
     detailImages: [
+      "/lovable-uploads/griplicator-board.png",
       "/lovable-uploads/glipicator1.jpg",
       "/lovable-uploads/glipicator2.jpg",
       "/lovable-uploads/glipicator3.jpg",
@@ -148,6 +150,7 @@ export const projects: Project[] = [
     fullDescription: "A sleek, matte-finished accessory designed with care and style, for cycling enthusiasts. Offering interchangeable, stylish designs, it enhances protection and personalization. Tailored for New Zealand's vast cycling market, it lets riders swap overlay designs for a fresh look without changing helmets. Research on NZ cyclists revealed demand for easy customization and durability.",
     image: "/lovable-uploads/stryke-helmet-main.png",
     detailImages: [
+      "/lovable-uploads/stryke-board.png",
       "/lovable-uploads/stryke1.png",
       "/lovable-uploads/stryke2.JPG",
       "/lovable-uploads/stryke3.jpg",
@@ -263,10 +266,7 @@ export const projects: Project[] = [
       "/lovable-uploads/boxie1.jpg",
       "/lovable-uploads/boxie2.jpg",
       "/lovable-uploads/boxie3.jpg",
-      "/lovable-uploads/boxie4.jpg",
-      "/lovable-uploads/boxie5.jpg",
       "/lovable-uploads/boxie6.jpg",
-      "/lovable-uploads/boxie7.jpg",
       "/lovable-uploads/boxie8.jpg",
       "/lovable-uploads/boxie10.png",
       "/lovable-uploads/boxie11.png",
@@ -275,6 +275,9 @@ export const projects: Project[] = [
       "/lovable-uploads/boxie15.png",
       "/lovable-uploads/boxie16.png",
       "/lovable-uploads/boxie17.png",
+      "/lovable-uploads/boxie-panel.png",
+      "/lovable-uploads/boxie-qa.png",
+      "/lovable-uploads/boxie_promo.mp4"
     ],
     type: ["Exhibited project", "Circular Packaging Design"],
     duration: "JUL - OCT 2025",
@@ -283,19 +286,24 @@ export const projects: Project[] = [
       "100% PHA Bioplastic: Compostable in home environments; no sorting required. Designed to return safely to nature within 6–12 months.",
       "Character-Driven Branding: Playful personalities (Tropical Bliss, Aqua Fresh, Cherry Crush) make sustainability friendly and relatable. Embossed motifs match fragrance themes—flowers, tuxedo, heart designs—which visitors described as 'cute', 'attractive' and 'desirable to keep'.",
       "Intuitive User Transformation: A satisfying 'click' when inserting components, designed for all ages. Tested even with young children who quickly understood the bottle-to-box change.",
-      "Showcase-Ready Display Deliverables: A1 panel, looping promo video, labelled inserts, pamphlets, sticker packs and business cards created an engaging, professional capstone presentation that attracted industry attention."
+      "Showcase-Ready Display Deliverables: A1 panel, looping promo video, labelled inserts, pamphlets, sticker packs and business cards created an engaging, professional capstone presentation that attracted industry attention.",
+      "Engineer-Validated Manufacture: Feedback from engineers confirmed the design’s suitability for PHA injection moulding, noting its clean draft angles, balanced wall thicknesses and simplified part geometry. Their assessment affirmed that Boxie could transition from prototype to mass production without major structural changes, but would require more extensive testing on the material’s resistance to breaking down under conditions inside bathrooms, before the box stage of the product life cycle."
     ],
     challenges: [
       "Engineering the Insert Mechanism: Dozens of prototypes were required to refine tolerances, ensure airtight bottle mode, and enable a smooth box conversion. Failures in thread dimensions, wall thickness, draft angles and meshing provided crucial learning milestones.",
       "Thread Development Difficulties: Standard SolidWorks threads were unreliable; multiple methods failed until real ISBT-spec caps were sourced and reverse-engineered.",
       "Material-Driven Constraints: PHA requires careful consideration of shrinkage, heat distortion and mould design parameters.",
       "Branding & Character Cohesion: Balancing form, emotional appeal, and clarity of function required iterative refinement of cap design, motifs and colour selections.",
-      "Exhibition Engagement: The capstone event required a display that communicated the concept even when the designer wasn't present."
+      "Exhibition Engagement: The capstone event required a display that communicated the concept even when the designer wasn't present.",
     ],
     outcomes: [
       "A reliable, manufacturable mechanism validated through physical testing.",
       "Accurate thread geometry that works in real-world use.",
-      "Insights from staff and engineering faculty confirmed that Boxie is feasible for injection moulding at scale."
+      "Insights from staff and engineering faculty confirmed that Boxie is feasible for injection moulding at scale.",
+      "Visitors demonstrated high ease-of-use, confirming that the transformation mechanism is intuitive without instruction.",
+      "Character variants successfully communicated fragrance themes, strengthening brand clarity during the showcase.",
+      "Physical testing validated the product’s structural resilience across repeated bottle-to-box conversions.",
+      "Exhibition feedback highlighted strong consumer appeal, with many visitors expressing interest in keeping the packaging."
     ],
 
     skills: [
@@ -354,7 +362,9 @@ export const projects: Project[] = [
       "Validated demand for a pay-per-use essentials system in tourist-heavy areas.",
       "A simplified, icon-driven ATM-inspired layout with clear voice and visual confirmation for transactions.",
       "An integrated safety package including CCTV, a rigid frame, recessed screen, protected payment zone and minimal exposed surfaces.",
-      "A viable use-oriented PSS model built on shared responsibilities for stocking, maintenance, pricing and user accessibility."
+      "A viable use-oriented PSS model built on shared responsibilities for stocking, maintenance, pricing and user accessibility.",
+      "The recessed screen and protected payment panel were recognised as effective anti-tamper strategies suitable for high-traffic urban environments.",
+      "Accessibility-considerate design that accounts for screen height, reach distances and dispensing bays that accommodate wheelchair users, validating the kiosk’s inclusive public-space design."
     ],
     skills: [
       "CAD Modelling & Assembly",
