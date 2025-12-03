@@ -33,6 +33,7 @@ export const projects: Project[] = [
       "/lovable-uploads/gallagher2.png",
       "/lovable-uploads/gallagher3.png",
       "/lovable-uploads/gallagher4.png",
+      "/lovable-uploads/gallagher-final.jpeg",
       "/lovable-uploads/obriens1.png",
       "/lovable-uploads/obriens3.png",
       "/lovable-uploads/obriens6.png",
@@ -78,6 +79,11 @@ export const projects: Project[] = [
       "/lovable-uploads/Bloomlist4.jpg",
       "/lovable-uploads/BloomList7.jpg",
       "/lovable-uploads/BloomList8.png",
+      "/lovable-uploads/bloomlist10.jpeg",
+      "/lovable-uploads/bloomlist11.jpeg",
+      "/lovable-uploads/bloomlist12.jpeg",
+      "/lovable-uploads/bloomlist13.jpeg",
+      "/lovable-uploads/bloomlist-video.mp4"
     ],
     type: "Industrial Design Project",
     duration: "MAY - JUN 2025",
@@ -117,6 +123,8 @@ export const projects: Project[] = [
       "/lovable-uploads/glipicator5.jpg",
       "/lovable-uploads/griplicator6.jpg",
       "/lovable-uploads/griplicator7.jpg",
+      "/lovable-uploads/griplicator8.jpeg",
+      "/lovable-uploads/griplicator9.jpeg"
     ],
     type: ["Industrial Design Challenge", "Award Winning Project"], 
     duration: "AUG - OCT 2024",
@@ -154,6 +162,8 @@ export const projects: Project[] = [
       "/lovable-uploads/stryke1.png",
       "/lovable-uploads/stryke2.JPG",
       "/lovable-uploads/stryke3.jpg",
+      "/lovable-uploads/stryke4.jpeg",
+      "/lovable-uploads/stryke5.jpeg"
     ],
     type: "Market-driven product development",
     duration: "SEPT 2024",
@@ -337,6 +347,10 @@ export const projects: Project[] = [
       "/lovable-uploads/essentia10.png",
       "/lovable-uploads/essentia11.png",
       "/lovable-uploads/essentia12.png",
+      "/lovable-uploads/essentia-ui.jpeg",
+      "/lovable-uploads/essentia-pss.jpeg",
+      "/lovable-uploads/essentia13.jpeg",
+      "/lovable-uploads/essentia14.jpeg"
     ],
     type: [
       "Product-Service System Design",
