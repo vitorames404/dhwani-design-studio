@@ -355,7 +355,6 @@ export const projects: Project[] = [
     ],
     type: [
       "Product-Service System Design",
-      "Interaction Design",
       "Public Infrastructure Design"
     ],
     duration: "OCT 2025",
@@ -399,7 +398,7 @@ export const projects: Project[] = [
     description:
       "A fully autonomous Seedling Harvesting Machine designed to collect, sort and deposit stainless-steel seedlings using a custom water-wheel mechanism, built under strict engineering constraints and performance criteria.",
     fullDescription:
-      "This team project involved designing, building and demonstrating a fully autonomous Seedling Harvesting Machine (SHM) capable of collecting ten steel seedlings of two different lengths, while going up a ramp, sorting them and depositing them into designated boxes. Working within strict rules like limited power, defined start conditions, size constraints, and mandatory safety compliance features, our team engineered a reliable mechanism that could complete the full task without external control. After exploring multiple concepts through dirty prototyping, CAD development and design and engineering analysis, our team selected a water-wheel inspired harvester for its mechanical simplicity, continuous motion, and low likelihood of jamming. All mathematical foundations like torque-speed values, gear ratios and electronics were done from scratch. The final machine integrated a custom drivetrain, a laser-cut chassis, acetal gears, and simple electronic control with microswitches, emergency stop buttons, etc. to balance performance, cost, manufacturability and robustness. My involvement contributed specifically to the design development, CAD renders and drawings and most notably, the complete gearbox design, the sorting mechanism, health and safety compliance and machine build. New skills previously unknown to me like soldering, simple electronics and basic route sheet design were learnt and thoroughly enjoyed.",
+      "This team project involved designing, building and demonstrating a fully autonomous Seedling Harvesting Machine (SHM) capable of collecting ten steel seedlings of two different lengths, while going up a ramp, sorting them and depositing them into designated boxes. Working within strict rules like limited power, defined start conditions, size constraints, and mandatory safety compliance features, our team engineered a reliable mechanism that could complete the full task without external control. After exploring multiple concepts through dirty prototyping, CAD development and design and engineering analysis, our team selected a water-wheel inspired harvester for its mechanical simplicity, continuous motion, and low likelihood of jamming. All mathematical foundations like torque-speed values, gear ratios and electronics were done from scratch. \n\n The final machine integrated a custom drivetrain, a laser-cut chassis, acetal gears, and simple electronic control with microswitches, emergency stop buttons, etc. to balance performance, cost, manufacturability and robustness. My involvement contributed specifically to the design development, CAD renders and drawings and most notably, the complete gearbox design, the sorting mechanism, health and safety compliance and machine build. New skills previously unknown to me like soldering, simple electronics and basic route sheet design were learnt and thoroughly enjoyed.",
     image: "/lovable-uploads/engen10.jpeg",
     detailImages: [
       "/lovable-uploads/engen01.jpg",
@@ -416,7 +415,6 @@ export const projects: Project[] = [
       "/lovable-uploads/engen06.mp4"
     ],
     type: [
-      "CAD",
       "Mechanical Engineering & Design",
       "Automation",
       "Team Project"

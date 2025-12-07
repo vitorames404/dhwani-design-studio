@@ -190,13 +190,6 @@ const ProjectDetail = () => {
                   <Calendar className="w-4 h-4 text-accent" />
                   <span className="text-sm font-medium">{project.duration}</span>
                 </div>
-
-                {project.awardLabel && (
-                  <div className="flex items-center gap-2 px-4 py-2 bg-background rounded-full">
-                    <Trophy className="w-4 h-4 text-accent" />
-                    <span className="text-sm font-medium">{project.awardLabel}</span>
-                  </div>
-                )}
               </div>
             </div>
 

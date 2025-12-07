@@ -26,7 +26,7 @@ const About = () => {
               </p>
 
               <p>
-                I am Dhwani Jha, a final year student at the University of Waikato.
+                I am Dhwani Jha, a recent graduate from the University of Waikato.
                 My major in Industrial Design, paired with minors in Interaction Design
                 and Marketing, equips me with a unique perspective on designing products
                 that resonate with target users, while meeting market demands.
@@ -42,8 +42,7 @@ const About = () => {
               <p>
                 I believe that the future of design lies in seamlessly integrating
                 technology with human‑centered solutions, creating products that not only
-                solve problems but also enrich everyday lives, while adapting to
-                technology like AI and principles like sustainability.
+                solve problems but also enrich everyday lives, while adapting to, or around, technology like AI.
               </p>
 
             </div>
@@ -53,7 +52,7 @@ const About = () => {
           <div className="lg:col-span-5 h-full">
             <div className="h-full flex items-stretch justify-end">
               <img
-                src="/lovable-uploads/dhwani-about-me.jpg"
+                src="/lovable-uploads/pookie.jpg"
                 alt="Dhwani Jha"
                 className="rounded-lg shadow-2xl object-cover h-full w-auto max-w-sm"
               />
