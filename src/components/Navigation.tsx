@@ -34,16 +34,15 @@ const Navigation = () => {
             <Button
               variant="ghost"
               onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-accent"
+              className="text-foreground hover:text-accent hover:bg-transparent"
             >
               About
             </Button>
 
-            {/* ⭐ Added Recent Projects */}
             <Button
               variant="ghost"
               onClick={() => scrollToSection("recent-projects")}
-              className="text-foreground hover:text-accent"
+              className="text-foreground hover:text-accent hover:bg-transparent"
             >
               Recent
             </Button>
@@ -51,15 +50,23 @@ const Navigation = () => {
             <Button
               variant="ghost"
               onClick={() => scrollToSection("projects")}
-              className="text-foreground hover:text-accent"
+              className="text-foreground hover:text-accent hover:bg-transparent"
             >
               Projects
+            </Button>
+            
+            <Button
+              variant="ghost"
+              onClick={() => scrollToSection("theme")}
+              className="text-foreground hover:text-accent hover:bg-transparent"
+            >
+              Theme
             </Button>
 
             <Button
               variant="ghost"
               onClick={() => scrollToSection("contact")}
-              className="text-foreground hover:text-accent"
+              className="text-foreground hover:text-accent hover:bg-transparent"
             >
               Contact
             </Button>

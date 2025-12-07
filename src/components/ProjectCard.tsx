@@ -58,10 +58,16 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
             (cat, i) => (
               <span
                 key={i}
-                className="inline-flex items-center gap-1.5 px-3 py-1 bg-muted rounded-full"
+                className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full ${
+                  cat === "Award Winning Project"
+                    ? "bg-foreground/10 dark:bg-foreground/15 text-foreground dark:text-foreground award-tag-highlight ring-2 ring-foreground/30 dark:ring-white/40 font-semibold"
+                    : "bg-muted"
+                }`}
               >
                 {cat === "Award Winning Project" ? (
-                  <Trophy className="w-3.5 h-3.5 text-accent" />
+                  <Trophy
+                    className="w-3.5 h-3.5 text-foreground animate-bounce-slow"
+                  />
                 ) : (
                   <Tag className="w-3.5 h-3.5 text-accent" />
                 )}

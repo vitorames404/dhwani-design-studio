@@ -78,8 +78,6 @@ export const projects: Project[] = [
       "/lovable-uploads/BloomList3.png",
       "/lovable-uploads/Bloomlist4.jpg",
       "/lovable-uploads/BloomList7.jpg",
-      "/lovable-uploads/BloomList8.png",
-      "/lovable-uploads/bloomlist10.jpeg",
       "/lovable-uploads/bloomlist11.jpeg",
       "/lovable-uploads/bloomlist12.jpeg",
       "/lovable-uploads/bloomlist13.jpeg",
@@ -161,7 +159,6 @@ export const projects: Project[] = [
       "/lovable-uploads/stryke-board.png",
       "/lovable-uploads/stryke1.png",
       "/lovable-uploads/stryke2.JPG",
-      "/lovable-uploads/stryke3.jpg",
       "/lovable-uploads/stryke4.jpeg",
       "/lovable-uploads/stryke5.jpeg"
     ],
@@ -196,11 +193,15 @@ export const projects: Project[] = [
     image: "/lovable-uploads/steambolt-main.jpg",
     detailImages: [
       "/lovable-uploads/steambolt1.jpg",
-      "/lovable-uploads/steambolt4.jpg",
-      "/lovable-uploads/steambolt3.jpg",
       "/lovable-uploads/steambolt5.jpg",
       "/lovable-uploads/steambolt2.png",
       "/lovable-uploads/steambolt6.jpg",
+      "/lovable-uploads/engen12.png",
+      "/lovable-uploads/engen13.png",
+      "/lovable-uploads/engen14.png",
+      "/lovable-uploads/engen15.png",
+      "/lovable-uploads/engen16.png",
+      "/lovable-uploads/steambolt-vid.mp4"
     ],
     type: "Mechanical Engineering Project",
     duration: "SEPT 2024",
@@ -294,10 +295,10 @@ export const projects: Project[] = [
     keyFeatures: [
       "Dual-Purpose Packaging System: Transforms from bottle to box through interchangeable inserts placed inside the product at purchase. No external parts needed. Supported by user-tested tolerances and precise press-fit geometry.",
       "100% PHA Bioplastic: Compostable in home environments; no sorting required. Designed to return safely to nature within 6–12 months.",
-      "Character-Driven Branding: Playful personalities (Tropical Bliss, Aqua Fresh, Cherry Crush) make sustainability friendly and relatable. Embossed motifs match fragrance themes—flowers, tuxedo, heart designs—which visitors described as 'cute', 'attractive' and 'desirable to keep'.",
+      "Character-Driven Branding: Playful personalities (Tropical Bliss, Aqua Fresh, Cherry Crush) make sustainability friendly and relatable. Embossed motifs match fragrance themesflowers, tuxedo, heart designswhich visitors described as 'cute', 'attractive' and 'desirable to keep'.",
       "Intuitive User Transformation: A satisfying 'click' when inserting components, designed for all ages. Tested even with young children who quickly understood the bottle-to-box change.",
       "Showcase-Ready Display Deliverables: A1 panel, looping promo video, labelled inserts, pamphlets, sticker packs and business cards created an engaging, professional capstone presentation that attracted industry attention.",
-      "Engineer-Validated Manufacture: Feedback from engineers confirmed the design’s suitability for PHA injection moulding, noting its clean draft angles, balanced wall thicknesses and simplified part geometry. Their assessment affirmed that Boxie could transition from prototype to mass production without major structural changes, but would require more extensive testing on the material’s resistance to breaking down under conditions inside bathrooms, before the box stage of the product life cycle."
+      "Engineer-Validated Manufacture: Feedback from engineers confirmed the design’s suitability for PHA injection moulding, affirming that Boxie could transition from prototype to mass production without major structural changes, but would require more extensive testing on the material’s resistance to breaking down under conditions inside bathrooms, before the box stage of the product life cycle."
     ],
     challenges: [
       "Engineering the Insert Mechanism: Dozens of prototypes were required to refine tolerances, ensure airtight bottle mode, and enable a smooth box conversion. Failures in thread dimensions, wall thickness, draft angles and meshing provided crucial learning milestones.",
@@ -387,6 +388,70 @@ export const projects: Project[] = [
       "PSS Development",
       "Sustainable Systems Thinking",
       "Human-Centered Design Methods"
+    ]
+  },
+  {
+    id: "Seedling Harvesting Machine",
+    number: "03",
+    isRecent: true,
+    title: "Seedling Harvesting Machine",
+    subtitle: "Final Engineering Team Project",
+    description:
+      "A fully autonomous Seedling Harvesting Machine designed to collect, sort and deposit stainless-steel seedlings using a custom water-wheel mechanism, built under strict engineering constraints and performance criteria.",
+    fullDescription:
+      "This team project involved designing, building and demonstrating a fully autonomous Seedling Harvesting Machine (SHM) capable of collecting ten steel seedlings of two different lengths, while going up a ramp, sorting them and depositing them into designated boxes. Working within strict rules like limited power, defined start conditions, size constraints, and mandatory safety compliance features, our team engineered a reliable mechanism that could complete the full task without external control. After exploring multiple concepts through dirty prototyping, CAD development and design and engineering analysis, our team selected a water-wheel inspired harvester for its mechanical simplicity, continuous motion, and low likelihood of jamming. All mathematical foundations like torque-speed values, gear ratios and electronics were done from scratch. The final machine integrated a custom drivetrain, a laser-cut chassis, acetal gears, and simple electronic control with microswitches, emergency stop buttons, etc. to balance performance, cost, manufacturability and robustness. My involvement contributed specifically to the design development, CAD renders and drawings and most notably, the complete gearbox design, the sorting mechanism, health and safety compliance and machine build. New skills previously unknown to me like soldering, simple electronics and basic route sheet design were learnt and thoroughly enjoyed.",
+    image: "/lovable-uploads/engen10.jpeg",
+    detailImages: [
+      "/lovable-uploads/engen01.jpg",
+      "/lovable-uploads/engen02.jpg",
+      "/lovable-uploads/engen03.jpg",
+      "/lovable-uploads/engen04.jpg",
+      "/lovable-uploads/engen05.jpg",
+      "/lovable-uploads/engen06.jpg",
+      "/lovable-uploads/engen07.jpg",
+      "/lovable-uploads/engen08.png",
+      "/lovable-uploads/engen09.jpeg",
+      "/lovable-uploads/engen10.jpeg",
+      "/lovable-uploads/engen11.png",
+      "/lovable-uploads/engen06.mp4"
+    ],
+    type: [
+      "CAD",
+      "Mechanical Engineering & Design",
+      "Automation",
+      "Team Project"
+    ],
+    duration: "JUL - OCT 2025",
+    keyFeatures: [
+      "Water-Wheel Harvester: A rotating wheel with alternating pockets that picks up seedlings consistently as the machine advances.",
+      "Autonomous Sorting System: Seedlings are separated by length using a guided ramp, allowing pass/fail units to fall into the correct boxes.",
+      "Custom Gearbox: A fully designed and fabricated gearbox tailored to the required torque and speed for the track.",
+      "Laser-Cut Chassis: Modular MDF body with interlocking joins for rigidity, straightforward assembly and reduced manufacturing time.",
+      "Simple Control Logic: A microswitch-based start mechanism and dedicated motor drivers ensure reliable autonomous operation.",
+      "Safety-Focused Construction: Fully enclosed gears, recessed components and an emergency-stop switch integrated into the chassis."
+    ],
+    challenges: [
+      "Mechanism Selection: Evaluating six early concepts (barrel, cam arm, prongs, hook, tyre and waterwheel) to find a reliable solution that minimized jamming and complexity.",
+      "Sorting Accuracy: Designing a passive system that could correctly separate 7 pass and 3 fail seedlings based purely on length and motion.",
+      "Power & Constraints: Achieving sufficient torque and continuous harvesting using only the permitted AA battery packs and one propulsion motor.",
+      "CAD & Manufacturing Tolerances: Coordinating over 50 unique parts, ensuring drawings were fully defined, and managing tight tolerances for laser-cut MDF and acetal gears.",
+      "Safety Compliance: Eliminating finger-trap hazards, exposed moving parts, sharp edges and electrical risks to pass the health and safety inspection."
+    ],
+    outcomes: [
+      "A fully functional SHM able to collect, sort and deposit 7 out of 10 seedlings in the correct boxes.",
+      "Consistent performance achieved through stable gearing, controlled wheel speed and jam-resistant mechanism geometry.",
+      "Successful CAD package including 3D assemblies, 2D drawings and a complete parts list meeting manufacturability standards.",
+      "Positive testing and safe operation, passing the required health & safety assessment for demonstration.",
+      "Strong team coordination, completing design, manufacture and testing within the project timeline and resource constraints."
+    ],
+    skills: [
+      "SolidWorks (3D CAD & 2D Drawings)",
+      "Mechanical design & kinematic analysis",
+      "Gearbox design & basic drivetrain engineering",
+      "Laser-cutting (MDF & acetal)",
+      "Simple electronics, microswitch logic & battery systems",
+      "Prototyping, iteration & failure analysis",
+      "Team-based engineering & technical documentation"
     ]
   },
 ];

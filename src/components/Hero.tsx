@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute top-0 left-0 text-9xl font-black text-accent/15 z-0">
-        2025
+        2026
       </div>
       <div className="container mx-auto px-6 text-center z-10">
         <div className="max-w-4xl mx-auto">
