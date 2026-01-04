@@ -1,8 +1,45 @@
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/projects";
+import { useEffect, useRef } from "react";
 
 const Projects = () => {
   const featuredProjects = projects.filter(p => !p.isRecent);
+  const hasScrolledRef = useRef(false);
+
+  useEffect(() => {
+    // Restore scroll position when component mounts
+    const savedScrollPosition = sessionStorage.getItem('portfolioScrollPosition');
+    
+    if (savedScrollPosition && !hasScrolledRef.current) {
+      hasScrolledRef.current = true;
+      
+      // Wait for images to load and layout to stabilize
+      const timeouts = [
+        setTimeout(() => {
+          window.scrollTo({
+            top: parseInt(savedScrollPosition, 10),
+            behavior: 'instant' as ScrollBehavior
+          });
+        }, 0),
+        setTimeout(() => {
+          window.scrollTo({
+            top: parseInt(savedScrollPosition, 10),
+            behavior: 'instant' as ScrollBehavior
+          });
+        }, 50),
+        setTimeout(() => {
+          window.scrollTo({
+            top: parseInt(savedScrollPosition, 10),
+            behavior: 'smooth'
+          });
+          // Clear after final scroll
+          sessionStorage.removeItem('portfolioScrollPosition');
+        }, 150)
+      ];
+
+      return () => timeouts.forEach(clearTimeout);
+    }
+  }, []);
 
   return (
     <section id="projects" className="py-24">

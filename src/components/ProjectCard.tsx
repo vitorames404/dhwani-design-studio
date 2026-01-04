@@ -13,6 +13,8 @@ const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const isBoxie = project.id === "boxie";
 
   const handleClick = () => {
+    // Save current scroll position before navigating
+    sessionStorage.setItem('portfolioScrollPosition', window.scrollY.toString());
     navigate(`/project/${project.id}`);
   };
 

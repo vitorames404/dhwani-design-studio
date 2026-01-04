@@ -115,14 +115,14 @@ export const projects: Project[] = [
     detailImages: [
       "/lovable-uploads/griplicator-board.png",
       "/lovable-uploads/glipicator1.jpg",
-      "/lovable-uploads/glipicator2.jpg",
       "/lovable-uploads/glipicator3.jpg",
-      "/lovable-uploads/glipicator4.jpg",
       "/lovable-uploads/glipicator5.jpg",
       "/lovable-uploads/griplicator6.jpg",
       "/lovable-uploads/griplicator7.jpg",
       "/lovable-uploads/griplicator8.jpeg",
-      "/lovable-uploads/griplicator9.jpeg"
+      "/lovable-uploads/griplicator9.jpeg",
+      "/lovable-uploads/dhwani-griplicator.jpeg",
+      "/lovable-uploads/dhwani-griplicator2.jpeg"
     ],
     type: ["Industrial Design Challenge", "Award Winning Project"], 
     duration: "AUG - OCT 2024",

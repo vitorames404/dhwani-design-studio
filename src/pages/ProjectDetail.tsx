@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { projects } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ArrowLeft, Calendar, Tag, Trophy, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowLeft, Calendar, Tag, Trophy, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useEffect, useMemo, useState } from "react";
 import clsx from "clsx";
@@ -26,6 +26,16 @@ const ProjectDetail = () => {
 
   const isGallagherProject = project?.confidential && project?.watermarkText;
 
+  // Scroll to top when component first mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }, [id]); // Re-run if project ID changes
+
+  const handleBackToPortfolio = () => {
+    // Clear any saved scroll position so it returns to the saved position
+    navigate("/");
+  };
+
   const handleContextMenu = (e: React.MouseEvent) => {
     if (isGallagherProject) {
       e.preventDefault();
@@ -41,7 +51,13 @@ const ProjectDetail = () => {
   };
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0 });
+    if (lightboxOpen) {
+      // Just prevent scrolling, don't lock position
+      document.body.style.overflow = 'hidden';
+    } else {
+      // Restore scrolling
+      document.body.style.overflow = '';
+    }
 
     if (!lightboxOpen) return;
 
@@ -160,7 +176,7 @@ const ProjectDetail = () => {
       {/* HEADER */}
       <div className="bg-muted/30 py-12">
         <div className="container mx-auto px-6">
-          <Button onClick={() => navigate("/")} variant="ghost" className="mb-8 hover:text-accent">
+          <Button onClick={handleBackToPortfolio} variant="ghost" className="mb-8 hover:text-accent">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to Portfolio
           </Button>
@@ -216,6 +232,22 @@ const ProjectDetail = () => {
               <p className="text-lg leading-relaxed text-muted-foreground whitespace-pre-line">
                 {project.fullDescription}
               </p>
+              
+              {/* External Link for Eiffel Table Project */}
+              {project.id === "eiffel-table" && (
+                <div className="mt-6">
+                  <a
+                    href="https://www.leapaust.com.au/blog/dx/announcing-the-leap-keyshot-challenge-winners/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-accent/10 hover:bg-accent/20 text-accent rounded-full font-medium transition-all duration-300 hover:gap-3 group"
+                  >
+                    <Trophy className="w-5 h-5" />
+                    <span>View LEAP KeyShot Challenge 2025 Winners</span>
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                </div>
+              )}
             </section>
 
             {/* Skills */}
@@ -342,7 +374,7 @@ const ProjectDetail = () => {
             {/* Back to Portfolio */}
             <div className="flex justify-center">
               <Button
-                onClick={() => navigate("/")}
+                onClick={handleBackToPortfolio}
                 size="lg"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-4"
               >
@@ -354,57 +386,66 @@ const ProjectDetail = () => {
       </div>
 
       {/* LIGHTBOX — supports images + videos */}
-      <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
-        <DialogContent className="max-w-[95vw] sm:max-w-[90vw] p-0 bg-background/95">
-          <div className="flex items-center justify-between px-4 py-3">
-            <span className="text-sm text-muted-foreground">
-              {images.length > 0 ? `${activeIndex + 1} / ${images.length}` : ""}
-            </span>
-          </div>
+      {lightboxOpen && (
+        <Dialog open={lightboxOpen} onOpenChange={setLightboxOpen}>
+          <DialogContent className="max-w-[95vw] sm:max-w-[90vw] p-0 bg-background/95 border-0">
+            <div className="flex items-center justify-between px-4 py-3 bg-background/50 backdrop-blur-sm">
+              <span className="text-sm text-muted-foreground">
+                {images.length > 0 ? `${activeIndex + 1} / ${images.length}` : ""}
+              </span>
+            </div>
 
-          <div className="relative w-full h-full sm:h-[80vh] bg-black/80 flex items-center justify-center">
-            {images.length > 1 && (
-              <button
-                onClick={prev}
-                className="absolute left-2 sm:left-4 p-2 rounded-full bg-white/80 hover:bg-white shadow z-10"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </button>
-            )}
-
-            {/* VIDEO or IMAGE */}
-            {images[activeIndex] &&
-              (/\.(mp4|mov|webm)$/i.test(images[activeIndex]) ? (
-                <video
-                  controls
-                  autoPlay
-                  playsInline
-                  className="max-h-[80vh] max-w-full rounded-lg"
-                  onClick={(e) => e.stopPropagation()}
+            <div className="relative w-full h-full sm:h-[80vh] bg-black/80 flex items-center justify-center overflow-hidden">
+              {images.length > 1 && (
+                <button
+                  onClick={prev}
+                  className="absolute left-2 sm:left-4 p-2 rounded-full bg-white/80 hover:bg-white shadow z-10 transition-all"
+                  aria-label="Previous image"
                 >
-                  <source src={images[activeIndex]} type="video/mp4" />
-                </video>
-              ) : (
-                <WatermarkedImage
-                  src={images[activeIndex]}
-                  alt={`Image ${activeIndex + 1}`}
-                  onClick={() => images.length > 1 && next()}
-                  variant="shrink"
-                  className="object-contain"
-                />
-              ))}
+                  <ChevronLeft className="w-6 h-6" />
+                </button>
+              )}
 
-            {images.length > 1 && (
-              <button
-                onClick={next}
-                className="absolute right-2 sm:right-4 p-2 rounded-full bg-white/80 hover:bg-white shadow z-10"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            )}
-          </div>
-        </DialogContent>
-      </Dialog>
+              {/* VIDEO or IMAGE - Only render the active one */}
+              {images[activeIndex] && (
+                <div className="w-full h-full flex items-center justify-center">
+                  {/\.(mp4|mov|webm)$/i.test(images[activeIndex]) ? (
+                    <video
+                      key={`video-${activeIndex}-${images[activeIndex]}`}
+                      controls
+                      autoPlay
+                      playsInline
+                      className="max-h-[80vh] max-w-full rounded-lg"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <source src={images[activeIndex]} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <WatermarkedImage
+                      key={`image-${activeIndex}-${images[activeIndex]}`}
+                      src={images[activeIndex]}
+                      alt={`Image ${activeIndex + 1}`}
+                      onClick={() => images.length > 1 && next()}
+                      variant="shrink"
+                      className="object-contain"
+                    />
+                  )}
+                </div>
+              )}
+
+              {images.length > 1 && (
+                <button
+                  onClick={next}
+                  className="absolute right-2 sm:right-4 p-2 rounded-full bg-white/80 hover:bg-white shadow z-10 transition-all"
+                  aria-label="Next image"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </button>
+              )}
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
     </div>
   );
 };
